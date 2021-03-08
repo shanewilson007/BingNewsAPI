@@ -23,11 +23,28 @@ let request_params = {
 // Make request
 request(request_params, function (error, response, body) {
   var body = body['value'];
+  console.log(body);
+
   for (var i=0;i<body.length;i++) {
-    var title = $("<p></p>").text(body[i]['name']);
+    var title = $("<h2></h2>").text(body[i]['name']);
     $('.story').append(title);
+
     var description = $('<p></p>').text(body[i]['description']);
     $('.story').append(description);
+
+    if(body[i]['image']) {
+      var imageURL = body[i]['image']['thumbnail']['contentUrl'];
+      $('<img />', {
+          src: imageURL,
+          width: '200px',
+          height: '100px'
+      }).appendTo($('.story'));
+    }else {
+      continue;
+    };
+    
     $('.story').append('<hr>');
   };
+  
+  
 })
