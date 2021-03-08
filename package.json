@@ -1,0 +1,19 @@
+{
+  "name": "NewsAPI",
+  "version": "1.0.0",
+  "description": "A simple news API",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Shane",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "jquery": "^3.6.0",
+    "request": "^2.88.2"
+  }
+}
